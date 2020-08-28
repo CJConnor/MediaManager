@@ -1,4 +1,4 @@
-<!-- Form [Start] -->
+<!-- Form Start -->
 
 <div id="login-alert" class="my-4"></div>
 
@@ -21,3 +21,5 @@
 <!-- Login Button -->
 <button type="button" class="btn btn-dark btn-block shadow" onclick="login();">Login</button>
 <button type="button" class="btn btn-dark btn-block shadow" onclick="window.location = 'register';">Register</button></div>
+
+<!-- Form End -->

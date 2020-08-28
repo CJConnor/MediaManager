@@ -1,11 +1,17 @@
 <?php
 
+/**
+ * Class User
+ */
+class User extends System {
 
-class User {
+    protected $object = null;
+    protected $table_name = "users";
 
-    private $object = null;
-
-    # Construct user object by querying the DB by id
+    /**
+     * Construct user object by querying the DB by id
+     * @param $id | int or null
+     */
     function __construct($id=null) {
         if ($id != null) {
             $db = new Database;
@@ -15,24 +21,69 @@ class User {
         }
     }
 
+    /**
+     * Gets Object
+     * @return string
+     */
     public function getObj() {
         return $this->object;
     }
 
+    /**
+     * Gets users forename
+     * @return string
+     */
     public function getFirstName() {
-        return explode(' ', @$this->object->name)[0];
+        return $this->object != null ? $this->object->forename : "";
     }
 
+    /**
+     * Gets users surname
+     * @return string
+     */
     public function getLastName() {
-        return explode(' ', @$this->object->name)[1];
+        return $this->object != null ? $this->object->surname : "";
     }
 
-    public function getName() {
-        return $this->object != null ? @$this->object->name : '';
+    /**
+     * Gets users full name
+     * @return string
+     */
+    public function getFullName() {
+        return $this->object != null ? $this->object->forename . " " . $this->object->surname : "";
     }
 
+    /**
+     * Gets users username
+     * @return string
+     */
     public function getUsername() {
         return $this->object != null ? @$this->object->username : '';
     }
 
+    /**
+     * Gets users media list
+     * @return array
+     */
+    public function getMedia() {
+        return $this->object != null ? explode(',', $this->object->media) : [];
+    }
+
+    /**
+     * Adds a media id on the end of the media list
+     * @param $mid
+     * @return mixed
+     */
+    public function setMedia($mid) {
+        $this->object->media .= empty($this->object->media) ? $mid : "," . $mid;
+        return $this->object->media;
+    }
+
+    /**
+     * Sets the media new order
+     * @param $new_order
+     */
+    public function newOrder($new_order) {
+        $this->object->media = $new_order;
+    }
 }

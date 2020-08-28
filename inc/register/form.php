@@ -1,4 +1,4 @@
-<!-- Form [Start] -->
+<!-- Form Start -->
 
 <div id="register-alert" class="my-4 alert-danger"></div>
 
@@ -52,3 +52,5 @@
 
 <!-- Login Button -->
 <button type="button" class="btn btn-dark btn-block shadow" onclick="register();">Register</button>
+
+<!-- Form End -->

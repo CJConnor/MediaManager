@@ -13,18 +13,19 @@
 
         <div class="card shadow my-5 mx-auto text-center">
             <h3 class="my-auto">Your Media</h3>
+            <br />
+            <button class="btn btn-md btn-primary col-sm-2 align-self-center" onclick="addMedia();">Add Media</button>
 
             <hr>
 
-            <div>
-                No media could be found.
-                <br />
-                Add some by clicking <button class="btn btn-sm btn-primary">Here!</button>
-            </div>
+            <?php include_once 'inc/home/media-table.php' ?>
+
         </div>
 
     </div>
 
     <?php include_once "inc/footer.php";  ?>
+
+    <script type="text/javascript" src="_assets/js/home.js"></script>
 </body>
 </html>

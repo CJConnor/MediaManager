@@ -1,6 +1,6 @@
 <?php
     
-    # Cloud connection
+    # Connection parameters
     define("DB_HOST", "localhost");
     define("DB_USER", "root");
     define("DB_PASSWORD", "");
@@ -11,4 +11,5 @@
 
     # User
     $user = new User(@$_SESSION['uid']);
-    $user_fullname = $user->getFirstName() . " " . $user->getLastName();
+    $user_fullname = $user->getFullName();
+    $user_media = $user->getMedia();
