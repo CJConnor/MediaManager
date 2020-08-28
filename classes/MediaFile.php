@@ -8,6 +8,11 @@ class MediaFile extends System {
     protected $object;
     protected $table_name = "media_file";
 
+    public static $mediaFileTypes = ["aac", "mp3", "wav", "mp4", "avi"];
+    public static $audioFileTypes = ["aac", "mp3", "wav"];
+    public static $videoFileTypes = ["mp4", "avi"];
+    public static $imageFileTypes = ["jpg", "png", "jpeg", "gif"];
+
     /**
      * MediaFile constructor.
      * @param array $media
@@ -53,11 +58,8 @@ class MediaFile extends System {
         $mediaFileType = strtolower(pathinfo(basename($file['name']),PATHINFO_EXTENSION));
         $mediaFile = $target_dir . $this->object->file_name . "." . $mediaFileType;
 
-        // Accepted media types
-        $mediaTypes = ["aac", "mp3", "wav", "mp4", "avi"];
-
         // Check media type against accepted ones
-        if (!in_array($mediaFileType, $mediaTypes)) :
+        if (!in_array($mediaFileType, self::$mediaFileTypes)) :
             return [0, "Sorry, only AAC, MP3, WAV, MP4 & AVI files are allowed."];
         endif;
 
@@ -82,11 +84,8 @@ class MediaFile extends System {
         $imageFileType = strtolower(pathinfo(basename($file['name']),PATHINFO_EXTENSION));
         $imageFile = $target_dir . $this->object->image_file . "." . $imageFileType;
 
-        // Accepted image formats
-        $imageTypes = ["jpg", "png", "jpeg", "gif"];
-
         // Check file type against the accepted ones
-        if (!in_array($imageFileType, $imageTypes)) :
+        if (!in_array($imageFileType, self::$imageFileTypes)) :
             return [0, "Sorry, only JPG, JPEG, PNG & GIF files are allowed."];
         endif;
 

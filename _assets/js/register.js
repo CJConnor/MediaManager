@@ -48,6 +48,10 @@ function register() {
 
 }
 
+/**
+ * Confirms the users password
+ * @return {boolean}
+ */
 function confirmPassword() {
     let password     = document.getElementById('password').value;
     let confPassword = document.getElementById('confPassword').value;

@@ -22,6 +22,8 @@
 
         </div>
 
+        <?php include_once 'inc/home/player-modal.php' ?>
+
     </div>
 
     <?php include_once "inc/footer.php";  ?>

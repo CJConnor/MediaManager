@@ -35,6 +35,7 @@
                                 <td><?=$media->getName()?></td>
                                 <td><?=$category->getName()?></td>
                                 <td>
+                                    <button class="btn btn-sm btn-basic" onclick="play('<?=$media->getId()?>')">Play</button>
                                     <button class="btn btn-sm btn-primary" onclick="window.location.href = 'edit-media?id=<?=$media->getId()?>'">Edit</button>
                                 </td>
                             </tr>

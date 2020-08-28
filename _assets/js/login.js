@@ -3,6 +3,7 @@
  */
 function login() {
 
+    // Build login data
     const formData = new FormData();
     formData.append('username', document.getElementById('username').value);
     formData.append('password', document.getElementById('password').value);
