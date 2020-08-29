@@ -57,8 +57,8 @@ function closePlayer() {
 
 // On window load
 $(document).ready(function() {
-    // Check login on evey page apart from the login
-    if(location.href.split('/').pop() !== '/' && location.href.split('/').pop() !== 'index') {
+    // Check login on evey page apart from the login or Register
+    if(location.href.split('/').pop() !== '/' && location.href.split('/').pop() !== 'index' && location.href.split('/').pop() !== 'register') {
         checkLogin();
     }
 });
